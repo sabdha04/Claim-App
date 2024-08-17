@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Klaim Baru</title>
+    <link rel="stylesheet" href="/css/claimForm.css">
+    <script>
+        function redirectAfterTimeout() {
+            setTimeout(function() {
+                window.location.href = '/claim-form'; 
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <% if (message) { %>
+        <p><%= message %></p>
+        <script>
+            redirectAfterTimeout(); 
+        </script>
+    <% } %>
+
+    <h2>Buat Klaim Baru</h2>
+    <form action="/api/claims" method="POST">
+        <label for="title">Judul:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="description">Deskripsi:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+        <br><br>
+        <a href="/claims" class="back-button">Cancel</a>
+    </form>
+</body>
+</html>

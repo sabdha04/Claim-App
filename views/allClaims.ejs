@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semua Klaim</title>
+    <link rel="stylesheet" href="/css/claimAll.css">
+</head>
+<body>
+    <h2>Daftar Semua Klaim</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Judul</th>
+                <th>Deskripsi</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% claims.forEach(claim => { %>
+                <tr>
+                    <td><%= claim.User.username %></td>
+                    <td><%= claim.title %></td>
+                    <td><%= claim.description %></td>
+                    <td><%= claim.status %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/admin/users">Kembali ke Manajemen Pengguna</a>
+</body>
+</html>

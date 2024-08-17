@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Selamat Datang Di Halaman Utama</h1>
+    <h2>Aplikasi Klaim</h2>
+    <p>Hello, <%= user.username %>! Kamu telah berhasil login.</p>
+
+    <ul>
+        <li><a href="/home">Beranda</a></li>
+        <li><a href="/claims">Lihat Klaim</a></li>
+        <li><a href="/admin/all-claims">Lihat Semua Klaim (Hanya Admin)</a></li>
+        <li><a href="/login">Keluar</a></li>
+    </ul>
+</body>
+</html>

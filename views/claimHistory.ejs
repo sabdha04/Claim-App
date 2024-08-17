@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Klaim</title>
+    <link rel="stylesheet" href="/css/claimHistory.css">
+</head>
+<body>
+    <h2>Riwayat Klaim</h2>
+    <ul>
+        <% claims.forEach(claim => { %>
+            <li><strong><%= claim.title %></strong>: <%= claim.description %> (Status: <%= claim.status %>)</li>
+        <% }) %>
+    </ul>
+    <a href="/claim-form">Buat Klaim Baru</a>
+    <a href="/home" class="back-button">Kembali ke Halaman Home</a>
+</body>
+</html>
